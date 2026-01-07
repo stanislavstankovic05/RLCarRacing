@@ -1,13 +1,6 @@
 # RL CarRacing Scaffold 
 
-Acest repo contine doar infrastructura comuna:
-- setup + dependente
-- config YAML
-- environment wrappers (reward shaping, done rules, preprocessing)
-- metrici comune + render (human/video)
-- entrypoints: `train.py`, `eval.py`, `render_agent.py`
-
-Repo-ul nu include agenti. Fiecare agent se adauga ca plugin intr-un singur fisier Python + un fisier YAML.
+Momentan repo-ul are numai structura. Trebuie doar sa adaugam agentii in `./agents/<agent.py>` (explicat totul mai jos)
 
 ## Instalare
 
@@ -15,6 +8,7 @@ Repo-ul nu include agenti. Fiecare agent se adauga ca plugin intr-un singur fisi
 conda create -n rlcarracing python=3.11
 conda activate rlcarracing
 pip install -r requirements.txt
+(sunt sanse sa fie nevoie si de un pip install torch)
 ```
 
 ## Verificare rapida (fara agenti)
@@ -40,18 +34,19 @@ python debug_env.py
 2) Creezi fisierul `config/<agent>.yaml`
 3) Rulezi `train.py` / `eval.py` / `render_agent.py` cu `--agent <agent>`
 
-### Interfata minima a plugin-ului
+### Interfata al agentului
 
 Fisierul `agents/<agent>.py` trebuie sa defineasca:
 
 - `train(cfg: dict, seed: int, episodes: int, timesteps: int) -> None`
 - `load(model_path: str, cfg: dict) -> agents.api.LoadedAgent`
+(acestea sunt headerele, le lasati asa)
 
 `LoadedAgent` contine:
 - `spec`: spune ce wrappers trebuie aplicate (discrete/pixels/frame stack)
 - `policy`: are metoda `predict(obs, env=None)` si intoarce o actiune
 
-### Exemplu de `agents/<agent>.py` (schelet)
+### Exemplu de `agents/<agent>.py` 
 
 ```python
 from agents.api import LoadedAgent, AgentSpec
@@ -74,7 +69,7 @@ def load(model_path: str, cfg: dict) -> LoadedAgent:
     return LoadedAgent(name="agent", spec=spec, policy=Policy())
 ```
 
-### Config YAML (sablon)
+### Config YAML
 
 Pleci de la `config/template_agent.yaml` si il salvezi ca `config/<agent>.yaml`.
 
