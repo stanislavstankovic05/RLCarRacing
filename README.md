@@ -1,4 +1,4 @@
-# RL CarRacing Scaffold 
+# RL CarRacing Structura 
 
 Momentan repo-ul are numai structura. Trebuie doar sa adaugam agentii in `./agents/<agent.py>` (explicat totul mai jos)
 
