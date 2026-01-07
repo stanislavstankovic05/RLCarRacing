@@ -44,7 +44,12 @@ def render_agent(cfg, agent_name, model_path, seed = 123, episodes = 3, render =
                 if frame is not None:
                     frames.append(frame)
 
-        m = env.metrics
+        # Find the CarRacing wrapper and get metrics
+        cr_wrapper = env
+        while not hasattr(cr_wrapper, "metrics") and hasattr(cr_wrapper, "env"):
+            cr_wrapper = cr_wrapper.env
+        
+        m = getattr(cr_wrapper, "metrics", None)
         rewards.append(m.reward_sum)
         print(f"[{agent_name.upper()} RENDER] ep={ep+1} reward={m.reward_sum:.1f} steps={m.steps} finished={m.finished} offtrack={m.offtrack_ratio:.2f}")
 

@@ -1,0 +1,48 @@
+agent:
+  name: q_learning
+  needs_pixels: true
+  discrete_wrapper: true
+  action_set: "discret_v1" # defined in env/actions.py
+  resize: 84
+  frame_stack: 1
+  
+  # Q-learning specific
+  learning_rate: 0.1
+  discount_factor: 0.99
+  epsilon_start: 1.0
+  epsilon_end: 0.05
+  epsilon_decay_episodes: 2000
+
+  # Feature extractor
+  feature_extractor: "tile_v1"
+  tile_v1:
+    num_tiles: 8
+    
+# Environment settings
+env:
+  id: "CarRacing-v3"
+  render_mode: "rgb_array"
+  continuous: false
+
+reward:
+  use_native: false
+  shaped:
+    speed_p: 0.0
+    speed_k: 0.1
+    speed_b: 0.0
+    
+    on_grass_p: -1.0
+    on_grass_k: 0.0
+    on_grass_b: 0.0
+
+    steering_p: -0.5
+    steering_k: 0.0
+    steering_b: 0.0
+
+    gyro_p: -0.5
+    gyro_k: 0.0
+    gyro_b: 0.0
+
+termination:
+  off_course_for: 100
+  stable_for: 100

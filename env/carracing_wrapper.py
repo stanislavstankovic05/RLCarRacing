@@ -68,8 +68,10 @@ class CarRacing(gym.Wrapper):
 
         shaped_terminated = False
         if self._offtrack_consecutive >= self.max_offtrack_frames:
+            # print("Termination: offtrack limit reached")
             shaped_terminated = True
         if self._no_progress_counter >= self.max_no_progress_steps:
+            # print("Termination: no progress limit reached")
             shaped_terminated = True
         if finished:
             shaped_terminated = True
@@ -101,7 +103,8 @@ class ActionWrapper(gym.Wrapper):
         a = self.actions[int(action_idx)]
         # Pass plain Python floats (not numpy scalars) to avoid Box2D SWIG type issues
         action = (float(a[0]), float(a[1]), float(a[2]))
-        return self.env.step(action)
+        # Convert the tuple action to a numpy array before passing it to the environment
+        return self.env.step(np.array(action))
 
 
 class CarRacingMetrics(gym.Wrapper):
