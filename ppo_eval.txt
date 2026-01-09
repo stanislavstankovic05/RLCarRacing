@@ -1,0 +1,11 @@
+[PPO RENDER] ep=1 reward=-99.2 steps=192 finished=False offtrack=0.18
+[PPO RENDER] ep=2 reward=-2.6 steps=226 finished=False offtrack=0.15
+[PPO RENDER] ep=3 reward=-347.7 steps=227 finished=False offtrack=0.59
+[PPO RENDER] ep=4 reward=-108.7 steps=187 finished=False offtrack=0.18
+[PPO RENDER] ep=5 reward=-11.7 steps=217 finished=False offtrack=0.16
+[PPO RENDER] ep=6 reward=-11.8 steps=218 finished=False offtrack=0.16
+[PPO RENDER] ep=7 reward=-258.0 steps=230 finished=False offtrack=0.58
+[PPO RENDER] ep=8 reward=-11.8 steps=218 finished=False offtrack=0.16
+[PPO RENDER] ep=9 reward=-11.8 steps=218 finished=False offtrack=0.16
+[PPO RENDER] ep=10 reward=-108.7 steps=187 finished=False offtrack=0.18
+Mean reward: -97.20 ± 112.70

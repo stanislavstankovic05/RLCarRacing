@@ -1,0 +1,44 @@
+agent:
+  name: ppo
+  needs_pixels: true
+  discrete_wrapper: true
+  action_set: "discret_v1"
+  resize: 84
+  frame_stack: 1
+
+  # PPO hyperparameters
+  learning_rate: 0.00025
+  discount_factor: 0.99
+  n_steps: 2048
+  batch_size: 64
+  n_epochs: 10
+  gae_lambda: 0.95
+  clip_range: 0.2
+  ent_coef: 0.0
+  vf_coef: 0.5
+  max_grad_norm: 0.5
+
+env:
+  id: "CarRacing-v2"
+  render_mode: "rgb_array"
+  continuous: false
+
+reward:
+  use_native: false
+  shaped:
+    speed_p: 0.0
+    speed_k: 0.1
+    speed_b: 0.0
+    on_grass_p: -1.0
+    on_grass_k: 0.0
+    on_grass_b: 0.0
+    steering_p: -0.5
+    steering_k: 0.0
+    steering_b: 0.0
+    gyro_p: -0.5
+    gyro_k: 0.0
+    gyro_b: 0.0
+
+termination:
+  off_course_for: 100
+  stable_for: 100

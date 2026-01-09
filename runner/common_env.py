@@ -1,10 +1,20 @@
 from __future__ import annotations
 import gymnasium as gym
-from gymnasium.wrappers import ResizeObservation, GrayscaleObservation, FrameStackObservation
-
+#from gymnasium.wrappers import ResizeObservation, GrayscaleObservation, FrameStackObservation
+from gymnasium.wrappers import ResizeObservation
 from env.reward_shaping import RewardParams
 from env.carracing_wrapper import CarRacing, CarRacingMetrics, ActionWrapper
 from env.actions import action_set
+
+try:
+    from gymnasium.wrappers import GrayscaleObservation  
+except ImportError:
+    from gymnasium.wrappers.gray_scale_observation import GrayScaleObservation as GrayscaleObservation 
+
+try:
+    from gymnasium.wrappers import FrameStackObservation
+except ImportError:
+    from gymnasium.wrappers import FrameStack as FrameStackObservation
 
 def make_env(cfg, seed, render_mode, *, needs_pixels, discrete_wrapper, action_set_name, resize, frame_stack):
     env = gym.make(cfg["env"]["id"], render_mode=render_mode)
