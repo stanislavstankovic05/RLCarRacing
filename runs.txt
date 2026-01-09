@@ -1,0 +1,78 @@
+First run:
+# Q-learning specific
+  learning_rate: 0.1
+  discount_factor: 0.99
+  epsilon_start: 1.0
+  epsilon_end: 0.05
+  epsilon_decay_episodes: 1000
+
+[Q_LEARNING RENDER] ep=1 reward=-145.3 steps=153 finished=False offtrack=0.18
+[Q_LEARNING RENDER] ep=2 reward=-158.9 steps=189 finished=False offtrack=0.18
+[Q_LEARNING RENDER] ep=3 reward=-137.4 steps=224 finished=False offtrack=0.16
+[Q_LEARNING RENDER] ep=4 reward=-207.8 steps=178 finished=False offtrack=0.24
+[Q_LEARNING RENDER] ep=5 reward=-179.7 steps=147 finished=False offtrack=0.24
+[Q_LEARNING RENDER] ep=6 reward=-184.7 steps=147 finished=False offtrack=0.24
+[Q_LEARNING RENDER] ep=7 reward=-280.4 steps=254 finished=False offtrack=0.26
+[Q_LEARNING RENDER] ep=8 reward=-141.4 steps=214 finished=False offtrack=0.16
+[Q_LEARNING RENDER] ep=9 reward=-137.3 steps=223 finished=False offtrack=0.16
+[Q_LEARNING RENDER] ep=10 reward=-172.3 steps=173 finished=False offtrack=0.20
+Mean reward: -174.52 ± 41.73
+
+Second run:
+# Q-learning specific
+  learning_rate: 0.1
+  discount_factor: 0.99
+  epsilon_start: 1.0
+  epsilon_end: 0.05
+  epsilon_decay_episodes: 2000
+
+[Q_LEARNING RENDER] ep=1 reward=-157.0 steps=220 finished=False offtrack=0.16
+[Q_LEARNING RENDER] ep=2 reward=-163.3 steps=233 finished=False offtrack=0.15
+[Q_LEARNING RENDER] ep=3 reward=-162.2 steps=222 finished=False offtrack=0.15
+[Q_LEARNING RENDER] ep=4 reward=-361.4 steps=314 finished=False offtrack=0.25
+[Q_LEARNING RENDER] ep=5 reward=-144.2 steps=192 finished=False offtrack=0.17
+[Q_LEARNING RENDER] ep=6 reward=-162.0 steps=270 finished=False offtrack=0.13
+[Q_LEARNING RENDER] ep=7 reward=-183.3 steps=133 finished=False offtrack=0.27
+[Q_LEARNING RENDER] ep=8 reward=-164.2 steps=242 finished=False offtrack=0.15
+[Q_LEARNING RENDER] ep=9 reward=-165.8 steps=258 finished=False offtrack=0.14
+[Q_LEARNING RENDER] ep=10 reward=-164.0 steps=240 finished=False offtrack=0.15
+Mean reward: -182.74 ± 60.23
+
+Third run:
+# Q-learning specific
+  learning_rate: 0.05
+  discount_factor: 0.995
+  epsilon_start: 1.0
+  epsilon_end: 0.1
+  epsilon_decay_episodes: 5000
+
+[Q_LEARNING RENDER] ep=1 reward=-149.8 steps=148 finished=False offtrack=0.20
+[Q_LEARNING RENDER] ep=2 reward=-178.9 steps=139 finished=False offtrack=0.25
+[Q_LEARNING RENDER] ep=3 reward=-180.6 steps=406 finished=False offtrack=0.09
+[Q_LEARNING RENDER] ep=4 reward=-593.5 steps=235 finished=False offtrack=0.54
+[Q_LEARNING RENDER] ep=5 reward=-159.6 steps=196 finished=False offtrack=0.18
+[Q_LEARNING RENDER] ep=6 reward=-210.1 steps=201 finished=False offtrack=0.21
+[Q_LEARNING RENDER] ep=7 reward=-183.1 steps=131 finished=False offtrack=0.27
+[Q_LEARNING RENDER] ep=8 reward=-158.5 steps=385 finished=False offtrack=0.09
+[Q_LEARNING RENDER] ep=9 reward=-175.4 steps=404 finished=False offtrack=0.09
+[Q_LEARNING RENDER] ep=10 reward=-177.9 steps=129 finished=False offtrack=0.27
+Mean reward: -216.74 ± 126.58
+
+Fourth run: (2000 episodes)
+learning_rate: 0.1
+  discount_factor: 0.99
+  epsilon_start: 1.0
+  epsilon_end: 0.05
+  epsilon_decay_episodes: 2000
+
+[Q_LEARNING RENDER] ep=1 reward=-169.0 steps=140 finished=False offtrack=0.24
+[Q_LEARNING RENDER] ep=2 reward=-174.8 steps=148 finished=False offtrack=0.23
+[Q_LEARNING RENDER] ep=3 reward=-177.3 steps=323 finished=False offtrack=0.17
+[Q_LEARNING RENDER] ep=4 reward=-162.8 steps=178 finished=False offtrack=0.20
+[Q_LEARNING RENDER] ep=5 reward=-153.5 steps=235 finished=False offtrack=0.14
+[Q_LEARNING RENDER] ep=6 reward=-223.3 steps=133 finished=False offtrack=0.33
+[Q_LEARNING RENDER] ep=7 reward=-174.9 steps=149 finished=False offtrack=0.23
+[Q_LEARNING RENDER] ep=8 reward=-170.7 steps=207 finished=False offtrack=0.16
+[Q_LEARNING RENDER] ep=9 reward=-159.1 steps=191 finished=False offtrack=0.18
+[Q_LEARNING RENDER] ep=10 reward=-175.3 steps=153 finished=False offtrack=0.22
+Mean reward: -174.07 ± 18.02

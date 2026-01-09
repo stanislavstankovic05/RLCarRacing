@@ -5,3 +5,5 @@ imageio-ffmpeg>=0.4.9
 matplotlib>=3.7
 pyyaml>=6.0
 tqdm>=4.66
+stable-baselines3
+tensorboard
