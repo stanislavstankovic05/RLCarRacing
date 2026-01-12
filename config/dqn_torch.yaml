@@ -1,0 +1,34 @@
+env_id: "CarRacing-v2"
+
+# ===== REWARD =====
+# Folosește reward-ul NATIV CarRacing
+# (nu adăugăm shaping)
+reward:
+  use_native: true
+
+# ===== TERMINATION =====
+# Foarte important: NU tăiem episoadele devreme
+termination:
+  offtrack_frames: 1000000      # practic dezactivat
+  no_progress_steps: 1000000    # practic dezactivat
+
+# ===== DQN =====
+dqn_torch:
+  action_set: "dqn5_simple"
+
+  gamma: 0.99
+
+  epsilon_init: 1.0
+  epsilon_min: 0.05
+  epsilon_decay: 0.5        # epsilon scade pe ~50% din episoade
+
+  lr: 0.0001
+
+  batch_size: 32
+  memory_size: 100000
+
+  C: 1000                   # target network update (steps)
+
+  n_frames: 4
+
+  save_every: 100
