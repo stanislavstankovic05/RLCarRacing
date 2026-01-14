@@ -1,11 +1,9 @@
-comenzi:
-python train.py --agent ppo --seed 0 --timesteps 10000
-PYTHONUNBUFFERED=1 python render_agent.py --agent ppo --model_path results/models/ppo_2/ppo.zip --seed 0 --episodes 10 --render none | tee ppo_eval.txt
-
 First train: 10000 timesteps (prea putini)  - ppo_2
 n_steps: 2048
 batch_size: 64
 n_epochs: 10
+learning_rate: 0.00025
+ent_coef: 0.00
 
 Seed 0
 
@@ -23,7 +21,8 @@ Eval
 [PPO RENDER] ep=10 reward=-124.1 steps=141 finished=False offtrack=0.23
 Mean reward: -191.52 ± 104.97
 
-Second train: 500000 timesteps (foarte multe ore)  - ppo_3
+
+Second train: 500000 timesteps
 n_steps: 2048
 batch_size: 64
 n_epochs: 10
@@ -89,48 +88,11 @@ Seed 586
 Mean reward: -97.20 ± 112.70
 
 
-Third train: 100000 timesteps  - ppo_5
+
+Third train: 500k
 n_steps: 2048
 batch_size: 64
 n_epochs: 10
-
-Seed 0
-
-[PPO RENDER] ep=1 reward=-303.9 steps=289 finished=False offtrack=0.43
-[PPO RENDER] ep=2 reward=-408.0 steps=230 finished=False offtrack=0.50
-[PPO RENDER] ep=3 reward=-428.2 steps=232 finished=False offtrack=0.51
-[PPO RENDER] ep=4 reward=-433.0 steps=230 finished=False offtrack=0.51
-[PPO RENDER] ep=5 reward=-541.9 steps=419 finished=False offtrack=0.39
-[PPO RENDER] ep=6 reward=-307.0 steps=270 finished=False offtrack=0.49
-[PPO RENDER] ep=7 reward=-418.1 steps=231 finished=False offtrack=0.51
-[PPO RENDER] ep=8 reward=-408.0 steps=230 finished=False offtrack=0.50
-[PPO RENDER] ep=9 reward=-413.1 steps=231 finished=False offtrack=0.50
-[PPO RENDER] ep=10 reward=-398.2 steps=232 finished=False offtrack=0.49
-Mean reward: -405.94 ± 63.39
-
-
-Aici am schimbat hiperparametrii
-
-Fourth train: 100000 timesteps  - ppo_4
-n_steps: 128
-batch_size: 32
-n_epochs: 5
-
-Seed 0
-
-[PPO RENDER] ep=1 reward=-135.0 steps=100 finished=False offtrack=0.25
-[PPO RENDER] ep=2 reward=-180.0 steps=100 finished=False offtrack=0.34
-[PPO RENDER] ep=3 reward=-180.0 steps=100 finished=False offtrack=0.34
-[PPO RENDER] ep=4 reward=-175.0 steps=100 finished=False offtrack=0.33
-[PPO RENDER] ep=5 reward=-170.0 steps=100 finished=False offtrack=0.32
-[PPO RENDER] ep=6 reward=-170.0 steps=100 finished=False offtrack=0.32
-[PPO RENDER] ep=7 reward=-180.0 steps=100 finished=False offtrack=0.34
-[PPO RENDER] ep=8 reward=-180.0 steps=100 finished=False offtrack=0.34
-[PPO RENDER] ep=9 reward=-180.0 steps=100 finished=False offtrack=0.34
-[PPO RENDER] ep=10 reward=-180.0 steps=100 finished=False offtrack=0.34
-Mean reward: -173.00 ± 13.27
-
-Fifth train: 500k - ppo_6
 learning_rate: 0.0001
 ent_coef: 0.01
 
