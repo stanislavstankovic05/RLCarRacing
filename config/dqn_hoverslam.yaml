@@ -1,0 +1,29 @@
+env_id: "CarRacing-v2"
+
+reward:
+  use_native: true
+
+termination:
+  offtrack_frames: 1000000
+  no_progress_steps: 1000000
+
+dqn_torch:
+  action_set: "dqn5_simple"
+
+  gamma: 0.99
+
+  epsilon_init: 1.0
+  epsilon_min: 0.05
+  epsilon_decay: 0.5
+
+  lr: 0.0001
+
+  batch_size: 32
+  memory_size: 100000
+
+  C: 1000
+
+  n_frames: 4
+
+  save_every: 100
+
