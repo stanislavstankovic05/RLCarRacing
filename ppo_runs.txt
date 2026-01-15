@@ -1,0 +1,196 @@
+comenzi:
+python train.py --agent ppo --seed 0 --timesteps 10000
+PYTHONUNBUFFERED=1 python render_agent.py --agent ppo --model_path results/models/ppo_2/ppo.zip --seed 0 --episodes 10 --render none | tee ppo_eval.txt
+
+First train: 10000 timesteps (prea putini)  - ppo_2
+n_steps: 2048
+batch_size: 64
+n_epochs: 10
+
+Seed 0
+
+Eval
+
+[PPO RENDER] ep=1 reward=-234.7 steps=197 finished=False offtrack=0.66
+[PPO RENDER] ep=2 reward=-124.1 steps=141 finished=False offtrack=0.23
+[PPO RENDER] ep=3 reward=-124.1 steps=141 finished=False offtrack=0.23
+[PPO RENDER] ep=4 reward=-468.7 steps=187 finished=False offtrack=0.67
+[PPO RENDER] ep=5 reward=-191.4 steps=164 finished=False offtrack=0.62
+[PPO RENDER] ep=6 reward=-265.8 steps=208 finished=False offtrack=0.66
+[PPO RENDER] ep=7 reward=-124.1 steps=141 finished=False offtrack=0.23
+[PPO RENDER] ep=8 reward=-129.1 steps=141 finished=False offtrack=0.23
+[PPO RENDER] ep=9 reward=-129.1 steps=141 finished=False offtrack=0.23
+[PPO RENDER] ep=10 reward=-124.1 steps=141 finished=False offtrack=0.23
+Mean reward: -191.52 ± 104.97
+
+Second train: 500000 timesteps (foarte multe ore)  - ppo_3
+n_steps: 2048
+batch_size: 64
+n_epochs: 10
+learning_rate: 0.00025
+ent_coef: 0.00
+
+Seed 0
+
+[PPO RENDER] ep=1 reward=156.4 steps=236 finished=False offtrack=0.13
+[PPO RENDER] ep=2 reward=-89.7 steps=197 finished=False offtrack=0.17
+[PPO RENDER] ep=3 reward=-11.8 steps=218 finished=False offtrack=0.16
+[PPO RENDER] ep=4 reward=-486.2 steps=212 finished=False offtrack=0.61
+[PPO RENDER] ep=5 reward=29.3 steps=207 finished=False offtrack=0.15
+[PPO RENDER] ep=6 reward=-196.1 steps=261 finished=False offtrack=0.51
+[PPO RENDER] ep=7 reward=-11.8 steps=218 finished=False offtrack=0.16
+[PPO RENDER] ep=8 reward=-11.8 steps=218 finished=False offtrack=0.16
+[PPO RENDER] ep=9 reward=-2.5 steps=225 finished=False offtrack=0.15
+[PPO RENDER] ep=10 reward=-11.8 steps=218 finished=False offtrack=0.16
+Mean reward: -63.60 ± 163.81
+
+
+Seed 11
+
+[PPO RENDER] ep=1 reward=-103.9 steps=189 finished=False offtrack=0.17
+[PPO RENDER] ep=2 reward=-11.9 steps=219 finished=False offtrack=0.16
+[PPO RENDER] ep=3 reward=-6.7 steps=217 finished=False offtrack=0.15
+[PPO RENDER] ep=4 reward=-322.3 steps=223 finished=False offtrack=0.60
+[PPO RENDER] ep=5 reward=146.4 steps=236 finished=False offtrack=0.14
+[PPO RENDER] ep=6 reward=-210.6 steps=256 finished=False offtrack=0.52
+[PPO RENDER] ep=7 reward=-108.6 steps=186 finished=False offtrack=0.18
+[PPO RENDER] ep=8 reward=-11.9 steps=219 finished=False offtrack=0.16
+[PPO RENDER] ep=9 reward=-11.8 steps=218 finished=False offtrack=0.16
+[PPO RENDER] ep=10 reward=-108.7 steps=187 finished=False offtrack=0.18
+Mean reward: -75.00 ± 121.77
+
+
+Seed 342
+
+[PPO RENDER] ep=1 reward=-11.7 steps=217 finished=False offtrack=0.16
+[PPO RENDER] ep=2 reward=-11.8 steps=218 finished=False offtrack=0.16
+[PPO RENDER] ep=3 reward=-11.8 steps=218 finished=False offtrack=0.16
+[PPO RENDER] ep=4 reward=-11.8 steps=218 finished=False offtrack=0.16
+[PPO RENDER] ep=5 reward=-12.3 steps=223 finished=False offtrack=0.15
+[PPO RENDER] ep=6 reward=-11.7 steps=217 finished=False offtrack=0.16
+[PPO RENDER] ep=7 reward=-2.4 steps=224 finished=False offtrack=0.15
+[PPO RENDER] ep=8 reward=-343.0 steps=230 finished=False offtrack=0.56
+[PPO RENDER] ep=9 reward=-11.9 steps=219 finished=False offtrack=0.16
+[PPO RENDER] ep=10 reward=-99.1 steps=191 finished=False offtrack=0.18
+Mean reward: -52.75 ± 100.32
+
+Seed 586
+
+[PPO RENDER] ep=1 reward=-99.2 steps=192 finished=False offtrack=0.18
+[PPO RENDER] ep=2 reward=-2.6 steps=226 finished=False offtrack=0.15
+[PPO RENDER] ep=3 reward=-347.7 steps=227 finished=False offtrack=0.59
+[PPO RENDER] ep=4 reward=-108.7 steps=187 finished=False offtrack=0.18
+[PPO RENDER] ep=5 reward=-11.7 steps=217 finished=False offtrack=0.16
+[PPO RENDER] ep=6 reward=-11.8 steps=218 finished=False offtrack=0.16
+[PPO RENDER] ep=7 reward=-258.0 steps=230 finished=False offtrack=0.58
+[PPO RENDER] ep=8 reward=-11.8 steps=218 finished=False offtrack=0.16
+[PPO RENDER] ep=9 reward=-11.8 steps=218 finished=False offtrack=0.16
+[PPO RENDER] ep=10 reward=-108.7 steps=187 finished=False offtrack=0.18
+Mean reward: -97.20 ± 112.70
+
+
+Third train: 100000 timesteps  - ppo_5
+n_steps: 2048
+batch_size: 64
+n_epochs: 10
+
+Seed 0
+
+[PPO RENDER] ep=1 reward=-303.9 steps=289 finished=False offtrack=0.43
+[PPO RENDER] ep=2 reward=-408.0 steps=230 finished=False offtrack=0.50
+[PPO RENDER] ep=3 reward=-428.2 steps=232 finished=False offtrack=0.51
+[PPO RENDER] ep=4 reward=-433.0 steps=230 finished=False offtrack=0.51
+[PPO RENDER] ep=5 reward=-541.9 steps=419 finished=False offtrack=0.39
+[PPO RENDER] ep=6 reward=-307.0 steps=270 finished=False offtrack=0.49
+[PPO RENDER] ep=7 reward=-418.1 steps=231 finished=False offtrack=0.51
+[PPO RENDER] ep=8 reward=-408.0 steps=230 finished=False offtrack=0.50
+[PPO RENDER] ep=9 reward=-413.1 steps=231 finished=False offtrack=0.50
+[PPO RENDER] ep=10 reward=-398.2 steps=232 finished=False offtrack=0.49
+Mean reward: -405.94 ± 63.39
+
+
+Aici am schimbat hiperparametrii
+
+Fourth train: 100000 timesteps  - ppo_4
+n_steps: 128
+batch_size: 32
+n_epochs: 5
+
+Seed 0
+
+[PPO RENDER] ep=1 reward=-135.0 steps=100 finished=False offtrack=0.25
+[PPO RENDER] ep=2 reward=-180.0 steps=100 finished=False offtrack=0.34
+[PPO RENDER] ep=3 reward=-180.0 steps=100 finished=False offtrack=0.34
+[PPO RENDER] ep=4 reward=-175.0 steps=100 finished=False offtrack=0.33
+[PPO RENDER] ep=5 reward=-170.0 steps=100 finished=False offtrack=0.32
+[PPO RENDER] ep=6 reward=-170.0 steps=100 finished=False offtrack=0.32
+[PPO RENDER] ep=7 reward=-180.0 steps=100 finished=False offtrack=0.34
+[PPO RENDER] ep=8 reward=-180.0 steps=100 finished=False offtrack=0.34
+[PPO RENDER] ep=9 reward=-180.0 steps=100 finished=False offtrack=0.34
+[PPO RENDER] ep=10 reward=-180.0 steps=100 finished=False offtrack=0.34
+Mean reward: -173.00 ± 13.27
+
+Fifth train: 500k - ppo_6
+learning_rate: 0.0001
+ent_coef: 0.01
+
+Seed 0
+
+[PPO RENDER] ep=1 reward=227.0 steps=330 finished=False offtrack=0.14
+[PPO RENDER] ep=2 reward=30.5 steps=195 finished=False offtrack=0.16
+[PPO RENDER] ep=3 reward=21.1 steps=189 finished=False offtrack=0.17
+[PPO RENDER] ep=4 reward=11.5 steps=185 finished=False offtrack=0.17
+[PPO RENDER] ep=5 reward=102.5 steps=225 finished=False offtrack=0.16
+[PPO RENDER] ep=6 reward=290.5 steps=295 finished=False offtrack=0.12
+[PPO RENDER] ep=7 reward=21.1 steps=189 finished=False offtrack=0.17
+[PPO RENDER] ep=8 reward=16.1 steps=189 finished=False offtrack=0.17
+[PPO RENDER] ep=9 reward=25.0 steps=200 finished=False offtrack=0.17
+[PPO RENDER] ep=10 reward=21.0 steps=190 finished=False offtrack=0.17
+Mean reward: 76.63 ± 95.38
+
+
+Seed 11
+
+[PPO RENDER] ep=1 reward=11.3 steps=187 finished=False offtrack=0.17
+[PPO RENDER] ep=2 reward=29.8 steps=202 finished=False offtrack=0.16
+[PPO RENDER] ep=3 reward=-518.4 steps=184 finished=False offtrack=0.76
+[PPO RENDER] ep=4 reward=0.4 steps=196 finished=False offtrack=0.19
+[PPO RENDER] ep=5 reward=68.8 steps=212 finished=False offtrack=0.18
+[PPO RENDER] ep=6 reward=24.6 steps=204 finished=False offtrack=0.16
+[PPO RENDER] ep=7 reward=11.4 steps=186 finished=False offtrack=0.17
+[PPO RENDER] ep=8 reward=21.1 steps=189 finished=False offtrack=0.17
+[PPO RENDER] ep=9 reward=21.0 steps=190 finished=False offtrack=0.17
+[PPO RENDER] ep=10 reward=11.4 steps=186 finished=False offtrack=0.17
+Mean reward: -31.86 ± 163.12
+
+
+Seed 342
+
+
+[PPO RENDER] ep=1 reward=25.0 steps=200 finished=False offtrack=0.17
+[PPO RENDER] ep=2 reward=25.0 steps=200 finished=False offtrack=0.17
+[PPO RENDER] ep=3 reward=21.1 steps=189 finished=False offtrack=0.17
+[PPO RENDER] ep=4 reward=21.1 steps=189 finished=False offtrack=0.17
+[PPO RENDER] ep=5 reward=21.1 steps=189 finished=False offtrack=0.17
+[PPO RENDER] ep=6 reward=21.1 steps=189 finished=False offtrack=0.17
+[PPO RENDER] ep=7 reward=21.1 steps=189 finished=False offtrack=0.17
+[PPO RENDER] ep=8 reward=30.1 steps=199 finished=False offtrack=0.16
+[PPO RENDER] ep=9 reward=21.2 steps=188 finished=False offtrack=0.17
+[PPO RENDER] ep=10 reward=11.4 steps=186 finished=False offtrack=0.17
+Mean reward: 21.82 ± 4.48
+
+
+Seed 586
+
+
+[PPO RENDER] ep=1 reward=-34.9 steps=199 finished=False offtrack=0.24
+[PPO RENDER] ep=2 reward=15.5 steps=195 finished=False offtrack=0.17
+[PPO RENDER] ep=3 reward=151.8 steps=232 finished=False offtrack=0.15
+[PPO RENDER] ep=4 reward=11.3 steps=187 finished=False offtrack=0.17
+[PPO RENDER] ep=5 reward=30.0 steps=200 finished=False offtrack=0.16
+[PPO RENDER] ep=6 reward=16.1 steps=189 finished=False offtrack=0.17
+[PPO RENDER] ep=7 reward=251.3 steps=287 finished=False offtrack=0.12
+[PPO RENDER] ep=8 reward=21.1 steps=189 finished=False offtrack=0.17
+[PPO RENDER] ep=9 reward=21.1 steps=189 finished=False offtrack=0.17
+[PPO RENDER] ep=10 reward=-4.5 steps=195 finished=False offtrack=0.19
+Mean reward: 47.88 ± 81.81

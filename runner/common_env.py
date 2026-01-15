@@ -1,13 +1,23 @@
 from __future__ import annotations
 import gymnasium as gym
-from gymnasium.wrappers import ResizeObservation, GrayScaleObservation, FrameStack
-
+#from gymnasium.wrappers import ResizeObservation, GrayscaleObservation, FrameStackObservation
+from gymnasium.wrappers import ResizeObservation
 from env.reward_shaping import RewardParams
 from env.carracing_wrapper import CarRacing, CarRacingMetrics, ActionWrapper
 from env.actions import action_set
 
+try:
+    from gymnasium.wrappers import GrayscaleObservation  
+except ImportError:
+    from gymnasium.wrappers.gray_scale_observation import GrayScaleObservation as GrayscaleObservation 
+
+try:
+    from gymnasium.wrappers import FrameStackObservation
+except ImportError:
+    from gymnasium.wrappers import FrameStack as FrameStackObservation
+
 def make_env(cfg, seed, render_mode, *, needs_pixels, discrete_wrapper, action_set_name, resize, frame_stack):
-    env = gym.make(cfg["env_id"], render_mode=render_mode)
+    env = gym.make(cfg["env"]["id"], render_mode=render_mode)
     env.reset(seed=seed)
 
     reward_cfg = dict(cfg.get("reward", {}))
@@ -16,13 +26,14 @@ def make_env(cfg, seed, render_mode, *, needs_pixels, discrete_wrapper, action_s
     if use_native:
         env = CarRacingMetrics(env)
     else:
-        rp = RewardParams(**reward_cfg)
+        shaped_reward_cfg = reward_cfg.get("shaped", {})
+        rp = RewardParams(**shaped_reward_cfg)
         term = cfg["termination"]
         env = CarRacing(
             env,
-            rp,
-            offtrack_frames=term["offtrack_frames"],
-            no_progress_steps=term["no_progress_steps"],
+            reward_params=rp,
+            offtrack_frames=term["off_course_for"],
+            no_progress_steps=term["stable_for"],
         )
 
     if discrete_wrapper:
@@ -31,7 +42,8 @@ def make_env(cfg, seed, render_mode, *, needs_pixels, discrete_wrapper, action_s
 
     if needs_pixels:
         env = ResizeObservation(env, (resize, resize))
-        env = GrayScaleObservation(env, keep_dim=True)
-        env = FrameStack(env, frame_stack)
+        env = GrayscaleObservation(env, keep_dim=True)
+        if frame_stack > 1:
+            env = FrameStackObservation(env, frame_stack)
 
     return env
