@@ -20,7 +20,7 @@ agent:
     
 # Environment settings
 env:
-  id: "CarRacing-v3"
+  id: "CarRacing-v2"
   render_mode: "rgb_array"
   continuous: false
 
