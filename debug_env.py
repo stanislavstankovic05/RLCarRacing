@@ -9,7 +9,7 @@ from runner.common_env import make_env
 
 
 def main():
-    cfg = load_config(os.path.join("config", "template_agent.yaml"))
+    cfg = load_config(os.path.join("config", "env_base.yaml"))
     set_global_seeds(0)
     env = make_env(
         cfg=cfg,

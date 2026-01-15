@@ -1,9 +1,15 @@
-env_id: CarRacing
+# ---- Environment ----
+env:
+  id: CarRacing-v2
+
+# ---- Reward shaping ----
 reward:
   progress_scale: 1.0
   step_penalty: 0.1
   offtrack_penalty: 1.0
   finish_bonus: 100.0
+
+# ---- Termination conditions ----
 termination:
-  offtrack_frames: 50
-  no_progress_steps: 100
+  off_course_for: 50   # how many consecutive frames off track before terminating
+  stable_for: 100      # how many steps with "no progress"/stable state before terminating
